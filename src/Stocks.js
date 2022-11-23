@@ -3,10 +3,14 @@ import React from "react";
 import { useState, useEffect } from "react";
 import bull from "../src/assets/bull-image.png";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
+import { useParams } from "react-router-dom";
 
 function Stocks() {
+  const params = useParams();
   const [tableData, setTableData] = useState(null);
   const [stock, setStock] = useState(null);
+  const [about, setAbout] = useState(null);
+  const [image, setImage] = useState(null);
   const [data, setData] = useState({
     operatingCost: null,
     nonCurrentLiability: null,
@@ -25,14 +29,20 @@ function Stocks() {
   });
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/")
-      .then((response) => {
-        let arr = response.data.newTable.concat(response.data.table);
-        setTableData(arr);
-        setStock(response.data.stock);
-      })
-      .catch((err) => console.log(err));
+    setInterval(() => {
+      axios
+        .get(`https://minor-project-backend.herokuapp.com/${params.id}`)
+        .then((response) => {
+          setImage(response.data.image);
+          setAbout(response.data.data1);
+          let arr = response.data.data2.newTable.concat(
+            response.data.data2.table
+          );
+          setTableData(arr);
+          setStock(response.data.data2.stock);
+        })
+        .catch((err) => console.log(err));
+    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -54,9 +64,6 @@ function Stocks() {
       }
     });
   }, [tableData]);
-
-  console.log(data);
-  console.log(tableData);
 
   return (
     <div
@@ -92,7 +99,7 @@ function Stocks() {
                   color: "black",
                 }}
               >
-                <span style={{ color: "red" }}>Invest</span>karo
+                <span style={{ color: "red" }}>Investing</span>IQ
               </div>
             </div>
             <div
@@ -122,39 +129,56 @@ function Stocks() {
               marginBottom: "30px",
             }}
           >
-            {stock?.name}
+            <div
+              style={{ display: "flex", alignItems: "flex-end", gap: "10px" }}
+            >
+              <img src={image} width="150px" />
+              <div>
+                {stock?.name}
+                <div
+                  style={{
+                    fontSize: "30px",
+                    display: "flex",
+                    gap: "5px",
+                  }}
+                >
+                  {stock?.price}{" "}
+                  <div
+                    style={
+                      stock?.change.split("")[0] === "+"
+                        ? {
+                            fontSize: "18px",
+                            color: "#0ea600",
+                            display: "flex",
+                            alignItems: "center",
+                          }
+                        : {
+                            fontSize: "18px",
+                            color: "red",
+                            display: "flex",
+                            alignItems: "center",
+                          }
+                    }
+                  >
+                    {stock?.change.split("")[0] === "+" ? (
+                      <MdArrowDropUp color="#0ea600" size={30} />
+                    ) : (
+                      <MdArrowDropDown color="red" size={30} />
+                    )}
+                    {stock?.change}
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               style={{
-                fontSize: "30px",
-                display: "flex",
-                gap: "5px",
+                marginTop: "10px",
+                fontSize: "14px",
+                fontWeight: "medium",
+                color: "grey",
               }}
             >
-              {stock?.price}{" "}
-              <div
-                style={
-                  stock?.change.split("")[0] === "+"
-                    ? {
-                        fontSize: "18px",
-                        color: "#0ea600",
-                        display: "flex",
-                        alignItems: "center",
-                      }
-                    : {
-                        fontSize: "18px",
-                        color: "red",
-                        display: "flex",
-                        alignItems: "center",
-                      }
-                }
-              >
-                {stock?.change.split("")[0] === "+" ? (
-                  <MdArrowDropUp color="#0ea600" size={30} />
-                ) : (
-                  <MdArrowDropDown color="red" size={30} />
-                )}
-                {stock?.change}
-              </div>
+              {about}
             </div>
           </div>
           <div

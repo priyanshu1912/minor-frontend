@@ -49,7 +49,7 @@ function App() {
               color: "black",
             }}
           >
-            <span style={{ color: "red" }}>Invest</span>karo
+            <span style={{ color: "red" }}>Investing</span>IQ
           </div>
         </div>
         <div
@@ -98,7 +98,7 @@ function App() {
               marginTop: "3vh",
             }}
           >
-            InvestKaro transforms complicated financial statements of companies
+            InvestingIQ transforms complicated financial statements of companies
             into an imaginary character's personal finances. It's easier to
             analyse personal finances than that of businesses. No Sign Up
             Required.
@@ -161,7 +161,7 @@ function App() {
         </div>
         <div style={{ width: "50%" }}>
           <div style={{ fontWeight: "600", fontSize: "35px" }}>
-            How does InvestKaro work?
+            How does InvestingIQ work?
           </div>
           <div
             style={{
@@ -186,7 +186,7 @@ function App() {
                 size={25}
                 style={{ flexShrink: "0" }}
               />
-              InvestKaro scales down company profile to a personal level
+              InvestingIQ scales down company profile to a personal level
             </div>
             <div
               style={{
@@ -214,7 +214,7 @@ function App() {
                 size={25}
                 style={{ flexShrink: "0" }}
               />
-              InvestKaro flattens the learning curve to understand company
+              InvestingIQ flattens the learning curve to understand company
               portfolios by converting complex financial jargon into simple
               everyday words
             </div>
@@ -230,7 +230,7 @@ function App() {
                 size={25}
                 style={{ flexShrink: "0" }}
               />
-              InvestKaro simplifies decision making while buying shares for
+              InvestingIQ simplifies decision making while buying shares for
               people with a non-finance background
             </div>
             <div

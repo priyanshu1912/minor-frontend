@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Stocks from "./Stocks";
+import StocksPage from "./StocksPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,7 +15,10 @@ root.render(
         <Route path="/" element={<App />} />
       </Routes>
       <Routes>
-        <Route path="/stocks" element={<Stocks />} />
+        <Route path="/stocks" element={<StocksPage />} />
+      </Routes>
+      <Routes>
+        <Route path="/stocks/:id" element={<Stocks />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
