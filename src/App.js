@@ -4,6 +4,7 @@ import bull from "../src/assets/bull-image.png";
 import background from "../src/assets/background-image.jpg";
 import { Link } from "react-router-dom";
 import { FaRegHandPointRight } from "react-icons/fa";
+import styles from "./Stocks.module.css";
 
 const images = [
   "https://little-invest-town.vercel.app/reliance.png",
@@ -72,23 +73,8 @@ function App() {
           </div> */}
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <div
-          style={{
-            fontSize: "40px",
-            fontWeight: "600",
-            width: "50%",
-            letterSpacing: "1px",
-            marginTop: "22vh",
-            color: "black",
-          }}
-        >
+      <div className={styles.main}>
+        <div className={styles.title}>
           Analyze Indian stocks as easily as buying a coffee.
           <div
             style={{
@@ -122,23 +108,15 @@ function App() {
         </div>
         <img
           src="https://little-invest-town.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flanding.0817528e.png&w=1920&q=75"
-          width="500px"
-          style={{ paddingTop: "100px" }}
+          className={styles.titleImage}
         />
       </div>{" "}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginTop: "150px",
-        }}
-      >
-        <div>
+      <div className={styles.middleContainer}>
+        <div className={styles.bigResponsive}>
           <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
             <img
               src="https://little-invest-town.vercel.app/coffee.png"
-              style={{ width: "150px" }}
+              className={styles.listImage}
             />
             <div style={{ fontSize: "16px", fontWeight: "500" }}>
               Cafe Coffee Day @ 48.80 INR
@@ -147,22 +125,53 @@ function App() {
           <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
             <img
               src="https://little-invest-town.vercel.app/mobile.png"
-              style={{ width: "150px" }}
+              className={styles.listImage}
             />
             <div style={{ fontSize: "16px", fontWeight: "500" }}>Iphone @</div>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
             <img
               src="https://little-invest-town.vercel.app/laptop.png"
-              style={{ width: "150px" }}
+              className={styles.listImage}
             />
             <div style={{ fontSize: "16px", fontWeight: "500" }}>Lenovo @</div>
           </div>
         </div>
-        <div style={{ width: "50%" }}>
+        <div className={styles.list}>
           <div style={{ fontWeight: "600", fontSize: "35px" }}>
             How does InvestingIQ work?
           </div>
+
+          <div className={styles.smallResponsive}>
+            <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+              <img
+                src="https://little-invest-town.vercel.app/coffee.png"
+                className={styles.listImage}
+              />
+              <div style={{ fontSize: "16px", fontWeight: "500" }}>
+                Cafe Coffee Day @ 48.80 INR
+              </div>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+              <img
+                src="https://little-invest-town.vercel.app/mobile.png"
+                className={styles.listImage}
+              />
+              <div style={{ fontSize: "16px", fontWeight: "500" }}>
+                Iphone @
+              </div>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+              <img
+                src="https://little-invest-town.vercel.app/laptop.png"
+                className={styles.listImage}
+              />
+              <div style={{ fontSize: "16px", fontWeight: "500" }}>
+                Lenovo @
+              </div>
+            </div>
+          </div>
+
           <div
             style={{
               fontSize: "15px",
@@ -250,26 +259,12 @@ function App() {
           </div>
         </div>
       </div>
-      <div style={{ marginTop: "150px", marginBottom: "50px" }}>
-        <div
-          style={{
-            fontSize: "25px",
-            fontWeight: "600",
-            color: "black",
-            textAlign: "center",
-          }}
-        >
+      <div className={styles.carouselContainer}>
+        <div className={styles.carouselTitle}>
           Analyze the <span style={{ color: "red" }}>top companies</span> of the
           stock market
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: "30px",
-          }}
-        >
+        <div className={styles.carousel}>
           {images.map((item) => {
             return <img src={item} style={{ width: "80px" }} />;
           })}

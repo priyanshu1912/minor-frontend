@@ -1,0 +1,144 @@
+.tables {
+    display: grid;
+            grid-template-columns: 0.6fr 0.4fr;
+            gap: 80px;
+}
+
+.table {
+    width: 100%;
+            font-size: 12px;
+            font-weight: 500;
+}
+
+.about {
+    margin-top: 10px;
+            font-size: 14px;
+            font-weight: medium;
+            color: grey;
+}
+
+
+
+
+.main {
+    display: flex;
+            align-items: center;
+            justify-content: space-between;
+}
+
+.title {
+    font-size: 40px;
+            font-weight: 600;
+            width: 50%;
+            letter-spacing: 1px;
+            margin-top: 22vh;
+            color: black;
+}
+
+.titleImage {
+    width: 500px;
+    padding-top: 100px;
+}
+
+.list {
+    width: 100%;
+}
+
+.listImage {
+    width: 150px;
+}
+
+.smallResponsive {
+    display: none;
+}
+
+
+.carouselContainer {
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.carouselTitle {
+    font-size: 25px;
+            font-weight: 600;
+            color: black;
+            text-align: center;
+}
+
+.carousel {
+    display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+}
+
+
+.middleContainer {
+    display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 150px;
+}
+
+@media screen and (max-width: 500px) {
+    .tables {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table {
+        font-size: 8px;
+    }
+
+    .about {
+        font-size: 10px;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .title {
+        width: 100%;
+        margin-top: 5vh;
+    }
+
+    .titleImage {
+        width: 400px;
+        padding-top: 30px;
+    }
+
+    .list {
+        width: 100%;
+    }
+
+    .listImage {
+        width: 100px;
+    }
+
+    .bigResponsive {
+        display: none;
+    }
+
+    .smallResponsive{
+        display: block;
+    }
+
+    .carouselContainer {
+        margin-top: 50px;
+            margin-bottom: 30px;
+    }
+
+    .carouselTitle {
+        text-align: left;
+    }
+
+    .carousel {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .middleContainer {
+        margin-top: 50px;
+    }
+}

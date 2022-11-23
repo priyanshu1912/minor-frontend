@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import bull from "../src/assets/bull-image.png";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { useParams } from "react-router-dom";
+import styles from "./Stocks.module.css";
 
 function Stocks() {
   const params = useParams();
@@ -170,24 +171,9 @@ function Stocks() {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                marginTop: "10px",
-                fontSize: "14px",
-                fontWeight: "medium",
-                color: "grey",
-              }}
-            >
-              {about}
-            </div>
+            <div className={styles.about}>{about}</div>
           </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "0.6fr 0.4fr",
-              gap: "80px",
-            }}
-          >
+          <div className={styles.tables}>
             {tableData && (
               <div>
                 <div
@@ -196,18 +182,12 @@ function Stocks() {
                     marginBottom: "15px",
                     textDecoration: "underline",
                     fontSize: "15px",
+                    width: "fit-content",
                   }}
                 >
                   Balance Sheet :
                 </div>
-                <table
-                  style={{
-                    width: "100%",
-                    fontSize: "12px",
-                    fontWeight: "500",
-                  }}
-                  cellSpacing={0}
-                >
+                <table className={styles.table} cellSpacing={0}>
                   <tr>
                     {Object.keys(tableData[0]).map((item) => {
                       return (
