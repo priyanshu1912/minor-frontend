@@ -89,8 +89,9 @@ function App() {
             analyse personal finances than that of businesses. No Sign Up
             Required.
           </div>
-          <Link
-            to="/stocks"
+          <a
+            href="http://localhost:8501"
+            target='_blank'
             style={{
               fontSize: "14px",
               color: "white",
@@ -104,7 +105,7 @@ function App() {
             }}
           >
             View Stocks
-          </Link>
+          </a>
         </div>
         <img
           src="https://little-invest-town.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flanding.0817528e.png&w=1920&q=75"

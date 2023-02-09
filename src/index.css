@@ -9,3 +9,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input {
+  font-family: "Montserrat";
+  outline: none;
+  padding: 8px 10px;
+  width: 300px;
+  border: 1.5px solid lightgrey;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.mobile-search {
+  display: none;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 500px) {
+  .mobile-search {
+    display: block;
+  }
+
+  .web-search {
+    display: none;
+  }
+}
+
+
+.grid {
+  font-weight: bold;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+}
+@media screen and (max-width: 500px) {
+  .grid {
+    justify-content: center;
+  }
+}

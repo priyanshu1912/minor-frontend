@@ -12,7 +12,7 @@
 
 .about {
     margin-top: 10px;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: medium;
             color: grey;
 }
@@ -80,6 +80,22 @@
             margin-top: 150px;
 }
 
+
+.activebtn {
+        padding: 10px 15px;
+        font-weight: bold;
+        border-bottom: 5px solid purple;
+        cursor: pointer;
+}
+
+.unactivebtn {
+    padding: 10px 15px;
+    font-weight: bold;
+    border-bottom: 5px solid transparent;
+    cursor: pointer;
+}
+
+
 @media screen and (max-width: 500px) {
     .tables {
         display: flex;
@@ -91,7 +107,7 @@
     }
 
     .about {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .main {
